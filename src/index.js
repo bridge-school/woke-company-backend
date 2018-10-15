@@ -1,18 +1,12 @@
 const express = require("express");
 const morgan = require("morgan");
-const admin = require("firebase-admin");
 
 const router = require("./api");
 const { logger } = require("./utils/logger");
 const { errorHandler } = require("./middleware/error-handler");
-const serviceAccount = require("../firebase-credentials.json");
 
-// initialize firebase store
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
-});
-
-const db = admin.firestore();
+// use the this to make queries to Firebase!
+// const { db } = require("./db");
 
 // Create a new express application instance
 const app = express();
