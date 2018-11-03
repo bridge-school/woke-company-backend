@@ -2,13 +2,16 @@ const express = require('express');
 
 // TODO: get firebase access
 
-// const admin = require('firebase-admin');
-// const serviceAccount = require('../../firebase-credentials.json');
+const admin = require('firebase-admin');
+const serviceAccount = require('../../firebase-credentials.json');
 
-// admin.initializeApp({
-//   credential: admin.credential.cert(serviceAccount),
-//   databaseURL: 'https://<DATABASE_NAME>.firebaseio.com'
-// });
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: 'https://woke-company.firebaseio.com/'
+});
+const db = admin.database();
+
+
 
 const { healthRouter } = require('../routes/health/health.router');
 const { companiesRouter } = require('../routes/companies/companies.router');
