@@ -1,7 +1,7 @@
+const { read } = require("../../db");
+
 const getChecklistController = (req, res) => {
-  return res.json({
-    ok: "OK"
-  });
+  read("checklist").then(data => res.json(data));
 };
 
 module.exports = {
