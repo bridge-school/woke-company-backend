@@ -16,7 +16,15 @@ const read = nameOrPath =>
     .once("value")
     .then(snapshot => snapshot.val());
 
+
+const write = (path, data) =>
+	db.ref(path).set(data)
+
+const push = (path, data) =>
+	db.ref(path).push(data).then(ref => ref.key)
+
 module.exports = {
   db,
-  read
+  read,
+	write
 };
