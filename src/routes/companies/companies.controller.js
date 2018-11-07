@@ -22,6 +22,6 @@ const addCompanyController = (req, res) => {
 
 module.exports = {
   getCompaniesController,
-	getCompanyController.
+	getCompanyController,
 	addCompanyController
 };
