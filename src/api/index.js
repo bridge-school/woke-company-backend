@@ -9,6 +9,5 @@ const router = express.Router();
 router.use("/health", healthRouter);
 router.use("/checklist", checklistRouter);
 router.use("/companies", companiesRouter);
-
 router.use("/keywords", keywordsRouter);
 module.exports = router;
