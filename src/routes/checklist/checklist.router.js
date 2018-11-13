@@ -1,11 +1,11 @@
-const express = require("express");
+const express = require('express');
 
-const { getChecklistController } = require("./checklist.controller");
+const { getChecklistController } = require('./checklist.controller');
 
 const router = express.Router();
 
-router.get("", getChecklistController);
+router.get('', getChecklistController);
 
 module.exports = {
-  checklistRouter: router
+	checklistRouter: router
 };
