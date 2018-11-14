@@ -3,18 +3,18 @@ const serviceAccount = require("../../firebase-credentials.json");
 
 // initialize firebase store
 admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://woke-company.firebaseio.com/"
+	credential: admin.credential.cert(serviceAccount),
+	databaseURL: "https://woke-company.firebaseio.com/"
 });
 
 const db = admin.database();
 
 // helpers
 const read = nameOrPath =>
-  db
-    .ref(nameOrPath)
-    .once("value")
-    .then(snapshot => snapshot.val());
+	db
+		.ref(nameOrPath)
+		.once("value")
+		.then(snapshot => snapshot.val());
 
 
 const write = (path, data) =>
@@ -24,7 +24,8 @@ const push = (path, data) =>
 	db.ref(path).push(data).then(ref => ref.key)
 
 module.exports = {
-  db,
-  read,
+	db,
+	read,
+	push,
 	write
 };
